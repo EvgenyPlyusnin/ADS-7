@@ -13,12 +13,12 @@ class TPQueue {
     };
     ITEM *start = nullptr;
  public:
-    void add(const T& data);
-    T get();
+    void push(const T& data);
+    T pop();
 };
 
 template<typename T>
-void TPQueue<T>::add(const T& data) {
+void TPQueue<T>::push(const T& data) {
     if (start == nullptr) {
         start = new ITEM();
         start->data = data;
@@ -47,7 +47,7 @@ void TPQueue<T>::add(const T& data) {
 }
 
 template<typename T>
-T TPQueue<T>::get() {
+T TPQueue<T>::pop() {
     ITEM *startLocal = nullptr;
     startLocal = start;
     if (startLocal != nullptr) {
